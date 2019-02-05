@@ -3,7 +3,7 @@ const fs = require('fs');
 const fs2 = require('fs');
 
 const dir = 'output//';
-const inputFile  = dir+'DIC_COUNTRY.csv';
+const inputFile  = 'DIC_COUNTRY.csv';
 const outputFile = dir+'output.css';
 
 const server = http.createServer((req,res) => {
