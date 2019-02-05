@@ -17,10 +17,12 @@ const server = http.createServer((req,res) => {
                     .forEach(e=>{ 
                         let name = e.split(',')[0];
                         let hex = e.split(',')[1];
-                        ///let base64 = Buffer.from( hex.split(' ') .join(''), 'hex' ).toString('base64');                //  HEX->GIF
-                        //fs.writeFile(`${outputImgDir}${name}.gif`, base64, 'base64', err => console.log('err=>',err) ); // HEX->GIF
-                        let base64 = Buffer.from( hex.split(' ') .join(''), 'hex' ).toString('base64');
-                        arr += `.flagimage-${name}{ background-image: url("data:image/gif;base64,${new Buffer(base64).toString('base64')}") !important;};\n`;
+                        if( name.length<3 || hex.length<11 )  return ;  // if(name == 'NET') console.log('sex=>',name,hex.length);
+                            ///let base64 = Buffer.from( hex.split(' ') .join(''), 'hex' ).toString('base64');                // HEX->GIF
+                            //fs.writeFile(`${outputImgDir}${name}.gif`, base64, 'base64', err => console.log('err=>',err) ); // HEX->GIF
+                            let base64 = Buffer.from( hex.split(' ') .join(''), 'hex' ).toString('base64');
+                            arr += `.flagimage-${name}{ background-image: url("data:image/gif;base64,${new Buffer(base64).toString('base64')}") !important;};\n`;
+                       
                     });
                     fs.writeFileSync(outputFile, arr);
                     console.log('saved!');
