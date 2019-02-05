@@ -21,7 +21,7 @@ const server = http.createServer((req,res) => {
                             ///let base64 = Buffer.from( hex.split(' ') .join(''), 'hex' ).toString('base64');                // HEX->GIF
                             //fs.writeFile(`${outputImgDir}${name}.gif`, base64, 'base64', err => console.log('err=>',err) ); // HEX->GIF
                             let base64 = Buffer.from( hex.split(' ') .join(''), 'hex' ).toString('base64');
-                            arr += `.flagimage-${name}{ background-image: url("data:image/gif;base64,${new Buffer(base64).toString('base64')}") !important;};\n`;
+                            arr += `.flagimage-${name}{ background-image: url("data:image/gif;base64,${Buffer.from(base64).toString('base64')}") !important;};\n`;
                        
                     });
                     fs.writeFileSync(outputFile, arr);
