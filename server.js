@@ -20,7 +20,7 @@ const server = http.createServer((req,res) => {
                         if( name.length<3 || hex.length<11 )  return ;  // if(name == 'NET') console.log('sex=>',name,hex.length);
                             let base64 = Buffer.from( hex.split(' ') .join(''), 'hex' ).toString('base64');                
                             fs.writeFile(`${outputImgDir}${name}.gif`, base64, 'base64', err => console.log('err=>',err) ); // HEX->GIF
-                            arr += `.flagimage-${name}{ background-image: url("data:image/gif;base64,${base64}") !important;};\n`;
+                            arr += `.flagimage-${name}{ background-image: url("data:image/gif;base64,${base64}") !important;}\n`;
                        
                     });
                     fs.writeFileSync(outputFile, arr);
