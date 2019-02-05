@@ -15,7 +15,7 @@ Then just open your browser:
 ~~~
 localhost:3000
 ~~~
-
+And the conversion will be processed.
 
 
 REQUIREMENTS
