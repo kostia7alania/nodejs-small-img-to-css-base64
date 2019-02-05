@@ -11,6 +11,12 @@ cd nodejs-small-img-to-css-base64
 npm i
 npm run start
 ~~~
+Then just open your browser:
+~~~
+localhost:3000
+~~~
+
+
 
 REQUIREMENTS
 ------------
